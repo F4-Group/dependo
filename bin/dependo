@@ -29,8 +29,10 @@ var directDeps = Commander.format==='json' &&
   fs.existsSync(src) &&
   JSON.parse(fs.readFileSync(src));
 
+var baseDir = path.dirname(path.resolve(src)).replace(/\\/g, '/') + '/';
 var dependo = new Dependo(src, {
-    basePath: path.resolve(src).replace(/\\/g, '/') + '/',
+    basePath: baseDir,
+    baseDir: baseDir,
     format: Commander.format,
     exclude: Commander.exclude,
     directDeps: directDeps,
@@ -38,6 +40,6 @@ var dependo = new Dependo(src, {
     transform: Commander.reverse ? converse : undefined
 });
 
-var html = dependo.generateHtml();
-
-process.stdout.write(html);
+dependo.generateHtml(function(html) {
+    process.stdout.write(html);
+});

@@ -29,7 +29,11 @@ var directDeps = Commander.json &&
   fs.existsSync(src) &&
   JSON.parse(fs.readFileSync(src));
 
-var baseDir = path.dirname(path.resolve(src)).replace(/\\/g, '/') + '/';
+var stats = fs.statSync(src);
+var baseDir = path.resolve(src);
+if (!stats.isDirectory())
+    baseDir = path.dirname(baseDir);
+baseDir = baseDir.replace(/\\/g, '/') + '/';
 var dependo = new Dependo(src, {
     baseDir: baseDir,
     exclude: Commander.exclude,

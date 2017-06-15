@@ -40,6 +40,11 @@ var dependo = new Dependo(src, {
     transform: Commander.reverse ? converse : undefined
 });
 
-dependo.generateHtml(function(html) {
-    process.stdout.write(html);
+dependo.generateHtml(function(err, html) {
+    if (err) {
+        console.error('%s', err);
+        process.exit(1);
+    } else {
+        process.stdout.write(html);
+    }
 });

@@ -46,7 +46,7 @@ Options
 
 ```JavaScript
 {
-    'format': The module format to expect, 'cjs', 'amd', 'es6', or 'json'. AMD (amd) is the default format. If 'json', pass a file formatted like `example.json` in the `example/` directory.
+    'directDeps': a dependencies object formatted like `example.json` in the `example/` directory.
     'optimized': Boolean, True if the parser should read modules from a optimized file (r.js). Defaults to false.
     'exclude': String from which a regex will be constructed for excluding files from the scan.
     'mainRequireModule': Name of the module if parsing an optimized file (r.js), where the main file used require() instead of define. Defaults to ''.
@@ -64,7 +64,6 @@ API
 
   // Fire up an dependo instance
   var dependo = new Dependo(src, {
-    format: 'amd',
     requireConfig: 'optional path to RequireJS config file',
     exclude: '^node_modules',
     transform: function(dep){
@@ -88,7 +87,7 @@ CLI
 
       -h, --help             output usage information
       -V, --version          output the version number
-      -f, --format <name>    format to parse (amd/cjs/es6/json)
+      -j, --json             read the dependencies graph from a JSON file
       -x, --exclude <regex>  a regular expression for excluding modules
       -t, --title <title>    the title of the generated document (dependo)
       -v, --reverse          reverse direction of arrows

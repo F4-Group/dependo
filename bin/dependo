@@ -15,6 +15,7 @@ Commander
     .option('-j, --json', 'read the dependencies from a JSON file', false)
     .option('-x, --exclude <regex>', 'a regular expression for excluding modules')
     .option('-t, --title <title>', 'the title of the generated document (dependo)')
+    .option('-e, --extensions', 'show the file extensions')
     .option('-v, --reverse', 'reverse direction of arrows', false)
     .parse(process.argv);
 
@@ -39,7 +40,8 @@ var dependo = new Dependo(src, {
     exclude: Commander.exclude,
     directDeps: directDeps,
     title: Commander.title,
-    transform: Commander.reverse ? converse : undefined
+    transform: Commander.reverse ? converse : undefined,
+    showFileExtension: Commander.extensions,
 });
 
 dependo.generateHtml(function(err, html) {

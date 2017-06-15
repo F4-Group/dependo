@@ -90,6 +90,7 @@ CLI
       -j, --json             read the dependencies graph from a JSON file
       -x, --exclude <regex>  a regular expression for excluding modules
       -t, --title <title>    the title of the generated document (dependo)
+      -e  --extensions       show the file extensions
       -v, --reverse          reverse direction of arrows
 
 ### Generate HTML report of all module dependencies (AMD), and save it to /example/report.html

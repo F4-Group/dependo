@@ -33,6 +33,10 @@
     stroke-width: 1.5px;
   }
 
+  .fixed circle {
+    stroke: #a33;
+  }
+
   text {
     font: 10px sans-serif;
     pointer-events: none;

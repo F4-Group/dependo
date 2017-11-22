@@ -1,40 +1,40 @@
 {
-  "name": "dependo",
-  "version": "0.1.6",
-  "author": "Kenneth Auchecnberg <kenneth@auchenberg.dk>",
-  "repository": "https://github.com/auchenberg/dependo.git",
-  "homepage": "https://github.com/auchenberg/dependo.git",
-  "licenses": [
-    {
-      "type": "MIT"
+    "name": "dependo",
+    "version": "0.1.6",
+    "author": "Kenneth Auchecnberg <kenneth@auchenberg.dk>",
+    "repository": "https://github.com/auchenberg/dependo.git",
+    "homepage": "https://github.com/auchenberg/dependo.git",
+    "licenses": [
+        {
+            "type": "MIT"
+        }
+    ],
+    "description": "Visualize your CommonJS, AMD, or ES6 module dependencies.",
+    "keywords": [
+        "AMD",
+        "RequireJS",
+        "require",
+        "graph",
+        "commonjs",
+        "module",
+        "circular",
+        "dependency",
+        "dependencies",
+        "visualize",
+        "D3",
+        "es6"
+    ],
+    "engines": [
+        "node >= 0.10.0"
+    ],
+    "dependencies": {
+        "commander": "~2.6.0",
+        "madge": "~2.2.0",
+        "sha-1": "^0.1.1",
+        "underscore": "~1.7.0"
+    },
+    "main": "./lib/dependo",
+    "bin": {
+        "dependo": "./bin/dependo"
     }
-  ],
-  "description": "Visualize your CommonJS, AMD, or ES6 module dependencies.",
-  "keywords": [
-    "AMD",
-    "RequireJS",
-    "require",
-    "graph",
-    "commonjs",
-    "module",
-    "circular",
-    "dependency",
-    "dependencies",
-    "visualize",
-    "D3",
-    "es6"
-  ],
-  "engines": [
-    "node >= 0.10.0"
-  ],
-  "dependencies": {
-    "commander": "~2.6.0",
-    "madge": "~1.6.0",
-    "sha-1": "^0.1.1",
-    "underscore": "~1.7.0"
-  },
-  "main": "./lib/dependo",
-  "bin": {
-    "dependo": "./bin/dependo"
-  }
 }
